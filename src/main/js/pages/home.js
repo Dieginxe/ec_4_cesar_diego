@@ -32,7 +32,7 @@ class HomePage extends React.Component {
 					</div>
 					
 					<div style={{"width": "calc(100% / 3)"}}>
-						<Titulo entidad="Bandas" emoji="👩🏼‍🎤" />
+						<Titulo entidad="Ventas" emoji="👩🏼" />
 						<VentaList ventas={this.state.ventas} />
 						<Link to="/nueva-venta">Nueva Venta</Link>
 					</div>
