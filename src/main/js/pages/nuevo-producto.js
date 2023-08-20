@@ -30,7 +30,7 @@ const NuevoProductoPage = () => {
             <input type="text" id='nombre' name='nombre' onChange={e=>setNombre(e.target.value)} /> <br />
             <label>Precio</label> <br />
             <input type="text" id='precio' name='precio' onChange={e=>setPrecio(e.target.value)} /> <br />
-            <input type="submit" value="Nuevo Producto" />
+            <input type="submit" value="Registrar Producto" />
         </form>
         <Link to="/">Volver</Link>
         </>

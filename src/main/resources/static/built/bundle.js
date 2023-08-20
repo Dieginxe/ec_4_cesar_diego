@@ -41312,7 +41312,7 @@ var NuevoProductoPage = function NuevoProductoPage() {
     }
   }), " ", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
     type: "submit",
-    value: "Nuevo Producto"
+    value: "Registrar Producto"
   })), /*#__PURE__*/React.createElement(Link, {
     to: "/"
   }, "Volver"));
@@ -41352,7 +41352,7 @@ var VerProductoPage = function VerProductoPage() {
   useEffect(function () {
     client({
       method: 'GET',
-      path: '/api/producto/' + id
+      path: '/api/productos/' + id
     }).done(function (response) {
       return setProducto(response.entity);
     });
@@ -41420,7 +41420,7 @@ var VerVentaPage = function VerVentaPage() {
       key: detalleVentas.ID
     }, /*#__PURE__*/React.createElement("td", null, detalleVentas.PRODUCTO));
   }))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(Link, {
-    to: "/ver-venta/".concat(id, "/nuevo-detalleventa")
+    to: "/ver-venta/".concat(id, "/nuevo-detalleVenta")
   }, "Nuevo detalleventa"), " |", /*#__PURE__*/React.createElement(Link, {
     to: "/"
   }, "Volver"));

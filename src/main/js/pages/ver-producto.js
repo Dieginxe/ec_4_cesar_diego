@@ -11,7 +11,7 @@ const VerProductoPage = () => {
     useEffect(()=>{
         client({
             method: 'GET',
-            path: '/api/producto/' + id
+            path: '/api/productos/' + id
         }).done(response=>setProducto(response.entity))
     }, [])
 

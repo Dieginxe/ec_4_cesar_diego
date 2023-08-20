@@ -59,7 +59,7 @@ const VerVentaPage = () => {
             </table>
 
             <hr />
-            <Link to={`/ver-venta/${id}/nuevo-detalleventa`}>Nuevo detalleventa</Link> |
+            <Link to={`/ver-venta/${id}/nuevo-detalleVenta`}>Nuevo detalleventa</Link> |
             <Link to="/">Volver</Link>
         </>
     )
