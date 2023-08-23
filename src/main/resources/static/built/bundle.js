@@ -41056,8 +41056,7 @@ var HomePage = /*#__PURE__*/function (_React$Component) {
           "width": "calc(100% / 3)"
         }
       }, /*#__PURE__*/React.createElement(Titulo, {
-        entidad: "Productos",
-        emoji: "\uD83C\uDFB8"
+        entidad: "Productos"
       }), /*#__PURE__*/React.createElement(ProductoList, {
         productos: this.state.productos
       }), /*#__PURE__*/React.createElement(Link, {
@@ -41067,8 +41066,7 @@ var HomePage = /*#__PURE__*/function (_React$Component) {
           "width": "calc(100% / 3)"
         }
       }, /*#__PURE__*/React.createElement(Titulo, {
-        entidad: "Ventas",
-        emoji: "\uD83D\uDC69\uD83C\uDFFC"
+        entidad: "Ventas"
       }), /*#__PURE__*/React.createElement(VentaList, {
         ventas: this.state.ventas
       }), /*#__PURE__*/React.createElement(Link, {
@@ -41291,7 +41289,7 @@ var NuevoProductoPage = function NuevoProductoPage() {
     evento.preventDefault();
     client({
       method: 'POST',
-      path: '/api/precios',
+      path: '/api/productos',
       entity: {
         nombre: nombre,
         precio: precio

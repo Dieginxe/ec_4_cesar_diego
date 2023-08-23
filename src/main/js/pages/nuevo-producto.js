@@ -14,7 +14,7 @@ const NuevoProductoPage = () => {
         evento.preventDefault();
         client({
             method: 'POST',
-            path: '/api/precios',
+            path: '/api/productos',
             entity: {nombre: nombre, precio: precio},
             headers: {'Content-Type': 'application/json'}
         }).done(()=>{

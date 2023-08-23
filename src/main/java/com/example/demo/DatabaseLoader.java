@@ -39,13 +39,13 @@ public class DatabaseLoader implements CommandLineRunner {
 		Venta total = new Venta("120");
 		this.repositoryB.save(total);
 
-		this.repositoryN.save(new DetalleVenta(total,manty,5));
-		this.repositoryN.save(new DetalleVenta(total,cafetal,7));
+		DetalleVenta detalle = new DetalleVenta(total, manty, 50);
+		this.repositoryN.save(detalle);
 		
 
 		
 
-		
+
 
 
 	}
