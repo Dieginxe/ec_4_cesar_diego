@@ -53,6 +53,16 @@ const NuevoDetalleVentaPage = () => {
                     })}
                 </select><br />
 
+                <label>Cantidad del Producto</label>
+                    <input
+                    type="number"
+                    name="cantidad"
+                    id="cantidad"
+                    value={NuevoDetalleVentaPage.setCantidad} // Usa el estado para almacenar la cantidad del producto
+                    onChange={(e) => setCantidad(e.target.value)}
+                    /><br/>
+
+
                 <input type="submit" value="Nuevo Detalle Venta" />
 
             </form>

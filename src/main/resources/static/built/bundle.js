@@ -41239,7 +41239,16 @@ var NuevoDetalleVentaPage = function NuevoDetalleVentaPage() {
       key: value,
       value: value
     }, "(", producto.nombre, ")");
-  })), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+  })), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, "Cantidad del Producto"), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    name: "cantidad",
+    id: "cantidad",
+    value: NuevoDetalleVentaPage.setCantidad // Usa el estado para almacenar la cantidad del producto
+    ,
+    onChange: function onChange(e) {
+      return setCantidad(e.target.value);
+    }
+  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
     type: "submit",
     value: "Nuevo Detalle Venta"
   })), /*#__PURE__*/React.createElement(Link, {
@@ -41413,9 +41422,9 @@ var VerVentaPage = function VerVentaPage() {
   }, []);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Ver Venta"), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("table", {
     border: "1"
-  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Nombre"), /*#__PURE__*/React.createElement("td", null, venta.total)))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "Detalle"), /*#__PURE__*/React.createElement("table", {
+  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Total"), /*#__PURE__*/React.createElement("td", null, venta.total)))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "Detalle"), /*#__PURE__*/React.createElement("table", {
     border: "1"
-  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Producto"))), /*#__PURE__*/React.createElement("tbody", null, detalleVentas.map(function (detalleVentas) {
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Producto"), /*#__PURE__*/React.createElement("th", null, "Cantidad"), /*#__PURE__*/React.createElement("th", null, "Total"))), /*#__PURE__*/React.createElement("tbody", null, detalleVentas.map(function (detalleVentas) {
     return /*#__PURE__*/React.createElement("tr", {
       key: detalleVentas.ID
     }, /*#__PURE__*/React.createElement("td", null, detalleVentas.PRODUCTO));

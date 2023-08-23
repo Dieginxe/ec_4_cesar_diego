@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,11 +22,15 @@ public class DetalleVenta {
     @JoinColumn(name = "id_producto")
     private Producto producto;
 
+	@Column(name = "cantidad") 
+    private int cantidad;
+
     public DetalleVenta() {}
 
-    public DetalleVenta(Venta venta, Producto producto) {
+    public DetalleVenta(Venta venta, Producto producto, int cantidad) {
         this.venta = venta;
         this.producto = producto;
+		this.cantidad=cantidad;
     }
 
 	public Long getId() {
@@ -52,6 +57,15 @@ public class DetalleVenta {
 		this.producto = producto;
 	}
 
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	
 	
 
 }

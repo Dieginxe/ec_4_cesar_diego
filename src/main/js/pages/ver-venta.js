@@ -9,6 +9,7 @@ const VerVentaPage = () => {
     const [venta, setVenta] = useState({});
     const [detalleVentas, setDetalleVentas] = useState([]);
 
+
     useEffect(() => {
         client({
             method: 'GET',
@@ -29,7 +30,7 @@ const VerVentaPage = () => {
             <table border="1">
                 <tbody>
                     <tr>
-                        <th>Nombre</th>
+                        <th>Total</th>
                         <td>{venta.total}</td>
                     </tr>
                 </tbody>
@@ -42,6 +43,8 @@ const VerVentaPage = () => {
                     <tr>
                         
                         <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +53,7 @@ const VerVentaPage = () => {
                         return(
                             <tr key={detalleVentas.ID}>
                                 <td>{detalleVentas.PRODUCTO}</td>
+                               
                             </tr>
                         )
                     })}
