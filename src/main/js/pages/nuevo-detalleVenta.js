@@ -16,7 +16,7 @@ const NuevoDetalleVentaPage = () => {
         evento.preventDefault();
         client({
             method: 'POST',
-            path: '/api/detalleventas',
+            path: '/api/detalleventa',
             entity: {
                 venta: 'http://localhost:8080/api/ventas/'+id,
               

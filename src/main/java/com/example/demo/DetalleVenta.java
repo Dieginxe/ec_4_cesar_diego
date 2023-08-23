@@ -6,8 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table
 public class DetalleVenta {
     
     private @Id @GeneratedValue Long id;
@@ -23,7 +25,7 @@ public class DetalleVenta {
     private Producto producto;
 
 	@Column(name = "cantidad") 
-    private int cantidad;
+    private Integer cantidad;
 
     public DetalleVenta() {}
 
@@ -33,39 +35,38 @@ public class DetalleVenta {
 		this.cantidad=cantidad;
     }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Venta getVenta() {
-		return venta;
-	}
+    public Venta getVenta() {
+        return venta;
+    }
 
-	public void setVenta(Venta venta) {
-		this.venta = venta;
-	}
+    public void setVenta(Venta venta) {
+        this.venta = venta;
+    }
 
-	public Producto getProducto() {
-		return producto;
-	}
+    public Producto getProducto() {
+        return producto;
+    }
 
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 
-	public int getCantidad() {
-		return cantidad;
-	}
+    public Integer getCantidad() {
+        return cantidad;
+    }
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
 
-	
 	
 
 }

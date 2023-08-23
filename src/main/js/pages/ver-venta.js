@@ -47,19 +47,22 @@ const VerVentaPage = () => {
                         <th>Total</th>
                     </tr>
                 </thead>
+                
                 <tbody>
-
-                    {detalleVentas.map(detalleVentas=>{
-                        return(
-                            <tr key={detalleVentas.ID}>
-                                <td>{detalleVentas.PRODUCTO}</td>
-                               
-                            </tr>
-                        )
-                    })}
-
+                   
+                {detalleVentas.map(detalleVenta => {
+                 
+                    return (
+                        <tr key={detalleVenta.ID}>
+                            <td>{detalleVenta.producto}</td> {/* Cambiado de "manty" a "producto" */}
+                            <td>{detalleVenta.CANTIDAD}</td>
+                            
+                            
+                        </tr>
+                    );
+                })}
                 </tbody>
-
+               
             </table>
 
             <hr />

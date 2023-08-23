@@ -41203,7 +41203,7 @@ var NuevoDetalleVentaPage = function NuevoDetalleVentaPage() {
     evento.preventDefault();
     client({
       method: 'POST',
-      path: '/api/detalleventas',
+      path: '/api/detalleventa',
       entity: {
         venta: 'http://localhost:8080/api/ventas/' + id,
         producto: 'http://localhost:8080/api/productos/' + idProducto
@@ -41422,10 +41422,10 @@ var VerVentaPage = function VerVentaPage() {
     border: "1"
   }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Total"), /*#__PURE__*/React.createElement("td", null, venta.total)))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "Detalle"), /*#__PURE__*/React.createElement("table", {
     border: "1"
-  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Producto"), /*#__PURE__*/React.createElement("th", null, "Cantidad"), /*#__PURE__*/React.createElement("th", null, "Total"))), /*#__PURE__*/React.createElement("tbody", null, detalleVentas.map(function (detalleVentas) {
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Producto"), /*#__PURE__*/React.createElement("th", null, "Cantidad"), /*#__PURE__*/React.createElement("th", null, "Total"))), /*#__PURE__*/React.createElement("tbody", null, detalleVentas.map(function (detalleVenta) {
     return /*#__PURE__*/React.createElement("tr", {
-      key: detalleVentas.ID
-    }, /*#__PURE__*/React.createElement("td", null, detalleVentas.PRODUCTO));
+      key: detalleVenta.ID
+    }, /*#__PURE__*/React.createElement("td", null, detalleVenta.PRODUCTO), " ", /*#__PURE__*/React.createElement("td", null, detalleVenta.CANTIDAD));
   }))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(Link, {
     to: "/ver-venta/".concat(id, "/nuevo-detalleVenta")
   }, "Nuevo detalleventa"), " |", /*#__PURE__*/React.createElement(Link, {
