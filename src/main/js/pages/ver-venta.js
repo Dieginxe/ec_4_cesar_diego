@@ -30,8 +30,10 @@ const VerVentaPage = () => {
             <table border="1">
                 <tbody>
                     <tr>
-                        <th>Total</th>
+                        <th>Dia</th>
                         <td>{venta.total}</td>
+                        <td>{venta.total1}</td>
+                        <td>{venta.total2}</td>
                     </tr>
                 </tbody>
             </table>
@@ -71,7 +73,7 @@ const VerVentaPage = () => {
             </table>
 
             <hr />
-            <Link to={`/ver-venta/${id}/nuevo-detalleVenta`}>Nuevo detalleventa</Link> |
+            <Link to={`/ver-venta/${id}/nuevo-detalleVenta`}>Nuevo detalle</Link> |
             <Link to="/">Volver</Link>
         </>
     )

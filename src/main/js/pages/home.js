@@ -85,7 +85,7 @@ class VentaList extends React.Component {
 			<table border="1">
 				<tbody>
 					<tr>
-						<th>Total</th>
+						<th>Dia</th>
 						<th>Acciones</th>
 					</tr>
 					{ventas}

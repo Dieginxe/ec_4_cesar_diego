@@ -41120,7 +41120,7 @@ var VentaList = /*#__PURE__*/function (_React$Component3) {
       });
       return /*#__PURE__*/React.createElement("table", {
         border: "1"
-      }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Total"), /*#__PURE__*/React.createElement("th", null, "Acciones")), ventas));
+      }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Dia"), /*#__PURE__*/React.createElement("th", null, "Acciones")), ventas));
     }
   }]);
   return VentaList;
@@ -41182,31 +41182,32 @@ function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefine
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var _require = __webpack_require__(/*! react */ "./node_modules/react/index.js"),
-  useState = _require.useState,
-  useEffect = _require.useEffect;
+  useState = _require.useState;
 var _require2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js"),
-  Link = _require2.Link,
-  useParams = _require2.useParams;
+  Link = _require2.Link;
 var client = __webpack_require__(/*! ../client */ "./src/main/js/client.js");
 var NuevoDetalleVentaPage = function NuevoDetalleVentaPage() {
-  var _useParams = useParams(),
-    id = _useParams.id;
-  var _useState = useState([]),
+  var _useState = useState(''),
     _useState2 = _slicedToArray(_useState, 2),
     productos = _useState2[0],
     setProductos = _useState2[1];
   var _useState3 = useState(''),
     _useState4 = _slicedToArray(_useState3, 2),
-    idProducto = _useState4[0],
-    setIdProducto = _useState4[1];
+    precio = _useState4[0],
+    setPrecio = _useState4[1];
+  var _useState5 = useState(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    cantidad = _useState6[0],
+    setCantidad = _useState6[1];
   var handleSubmit = function handleSubmit(evento) {
     evento.preventDefault();
     client({
       method: 'POST',
-      path: '/api/detalleventa',
+      path: '/api/detalleVenta',
       entity: {
-        venta: 'http://localhost:8080/api/ventas/' + id,
-        producto: 'http://localhost:8080/api/productos/' + idProducto
+        PRODUCTO: productos,
+        PRECIO: precio,
+        CANTIDAD: cantidad
       },
       headers: {
         'Content-Type': 'application/json'
@@ -41215,40 +41216,32 @@ var NuevoDetalleVentaPage = function NuevoDetalleVentaPage() {
       window.location = '/';
     });
   };
-  useEffect(function () {
-    client({
-      method: 'GET',
-      path: '/api/productos'
-    }).done(function (response) {
-      setProductos(response.entity._embedded.productos);
-    });
-  }, []);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Nuevo Detalle Venta"), /*#__PURE__*/React.createElement("form", {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/React.createElement("label", null, "Producto "), /*#__PURE__*/React.createElement("select", {
-    name: "producto",
-    id: "producto",
+  }, /*#__PURE__*/React.createElement("label", null, "Producto "), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    name: "productos",
+    id: "productos",
     onChange: function onChange(e) {
-      setIdProducto(e.target.value);
+      return setProductos(e.target.value);
     }
-  }, productos.map(function (producto) {
-    var value = producto._links.self.href.split('/').slice(-1);
-    return /*#__PURE__*/React.createElement("option", {
-      key: value,
-      value: value
-    }, "(", producto.nombre, ")");
-  })), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, "Cantidad del Producto"), /*#__PURE__*/React.createElement("input", {
-    type: "number",
+  }), " ", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, "Precio "), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    name: "precio",
+    id: "precio",
+    onChange: function onChange(e) {
+      return setPrecio(e.target.value);
+    }
+  }), " ", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, "Cantidad "), /*#__PURE__*/React.createElement("input", {
+    type: "text",
     name: "cantidad",
     id: "cantidad",
-    value: NuevoDetalleVentaPage.setCantidad // Usa el estado para almacenar la cantidad del producto
-    ,
     onChange: function onChange(e) {
       return setCantidad(e.target.value);
     }
-  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+  }), " ", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
     type: "submit",
-    value: "Nuevo Detalle Venta"
+    value: "Nuevo Detalle"
   })), /*#__PURE__*/React.createElement(Link, {
     to: "/"
   }, "Volver"));
@@ -41420,7 +41413,7 @@ var VerVentaPage = function VerVentaPage() {
   }, []);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Ver Venta"), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("table", {
     border: "1"
-  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Total"), /*#__PURE__*/React.createElement("td", null, venta.total)))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "Detalle"), /*#__PURE__*/React.createElement("table", {
+  }, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Dia"), /*#__PURE__*/React.createElement("td", null, venta.total), /*#__PURE__*/React.createElement("td", null, venta.total1), /*#__PURE__*/React.createElement("td", null, venta.total2)))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "Detalle"), /*#__PURE__*/React.createElement("table", {
     border: "1"
   }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Producto"), /*#__PURE__*/React.createElement("th", null, "Precio"), /*#__PURE__*/React.createElement("th", null, "Cantidad"), /*#__PURE__*/React.createElement("th", null, "Total"))), /*#__PURE__*/React.createElement("tbody", null, detalleVentas.map(function (detalleVenta) {
     var total = (detalleVenta.PRECIO * detalleVenta.CANTIDAD).toString();

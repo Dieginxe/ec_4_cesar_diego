@@ -1,41 +1,34 @@
 const React = require('react');
-const {useState, useEffect} = require('react');
-const { Link,useParams } = require('react-router-dom');
+const {useState} = require('react');
+const { Link } = require('react-router-dom');
 const client = require('../client');
 
 const NuevoDetalleVentaPage = () => {
 
-    let { id } = useParams();
+    
 
     
-    const [productos, setProductos] = useState([])
+    const [productos, setProductos] = useState('')
+    const [precio, setPrecio] = useState('')
+    const [cantidad, setCantidad] = useState('')
+   
 
-    const [idProducto, setIdProducto] = useState('')
+   
 
     const handleSubmit = (evento)=>{
         evento.preventDefault();
+        
         client({
             method: 'POST',
-            path: '/api/detalleventa',
-            entity: {
-                venta: 'http://localhost:8080/api/ventas/'+id,
-              
-                producto: 'http://localhost:8080/api/productos/'+idProducto},
+            path: '/api/detalleVenta',
+            entity: {PRODUCTO: productos, PRECIO: precio, CANTIDAD: cantidad},
             headers: {'Content-Type': 'application/json'}
         }).done(()=>{
-           window.location = '/';
+            window.location = '/';
         })
     }
 
-    useEffect(() => {
-        client({
-            method: 'GET',
-            path: '/api/productos'
-        }).done(response=>{
-            setProductos(response.entity._embedded.productos)
-        })
-
-    },[])
+    
 
     return (
         <>
@@ -44,28 +37,17 @@ const NuevoDetalleVentaPage = () => {
 
                 
                 <label>Producto </label>
-                <select name="producto" id="producto" onChange={(e)=>{setIdProducto(e.target.value)}}>
-                    {productos.map(producto => {	
-                        const value = producto._links.self.href.split('/').slice(-1)
-                        return (
-                            <option key={value} value={value}>({producto.nombre})</option>
-                        )
-                    })}
-                </select><br />
+                <input type="text" name="productos" id="productos" onChange={e=>setProductos(e.target.value)}/> <br/>
+                <label>Precio </label>
+                <input type="text" name="precio" id="precio" onChange={e=>setPrecio(e.target.value)}/> <br/>
+                <label>Cantidad </label>
+                <input type="text" name="cantidad" id="cantidad" onChange={e=>setCantidad(e.target.value)}/> <br/>
+                
 
-                <label>Cantidad del Producto</label>
-                    <input
-                    type="number"
-                    name="cantidad"
-                    id="cantidad"
-                    value={NuevoDetalleVentaPage.setCantidad} // Usa el estado para almacenar la cantidad del producto
-                    onChange={(e) => setCantidad(e.target.value)}
-                    /><br/>
-
-
-                <input type="submit" value="Nuevo Detalle Venta" />
+                <input type="submit" value="Nuevo Detalle" />
 
             </form>
+            
             <Link to="/">Volver</Link>
         </>
     )
