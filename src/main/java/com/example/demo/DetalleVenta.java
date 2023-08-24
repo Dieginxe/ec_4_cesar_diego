@@ -27,7 +27,7 @@ public class DetalleVenta {
 	@Column(name = "cantidad") 
     private Integer cantidad;
 
-    public DetalleVenta() {}
+    public DetalleVenta(double d, String string, int i) {}
 
     public DetalleVenta(Venta venta, Producto producto, int cantidad) {
         this.venta = venta;

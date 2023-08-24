@@ -11,12 +11,12 @@ public class Producto {
 
 	private @Id @GeneratedValue Long id;
 	private String nombre;
-	private String precio;
+	private Double precio;
 	
 
 	private Producto() {}
 
-	public Producto(String nombre, String precio) {
+	public Producto(String nombre, Double precio) {
 		this.nombre = nombre;
 		this.precio = precio;
 		
@@ -66,13 +66,15 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public String getPrecio() {
+	public Double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(String precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
+
+	
 
 	
 }

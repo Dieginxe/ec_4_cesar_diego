@@ -43,6 +43,7 @@ const VerVentaPage = () => {
                     <tr>
                         
                         <th>Producto</th>
+                        <th>Precio</th>
                         <th>Cantidad</th>
                         <th>Total</th>
                     </tr>
@@ -51,11 +52,12 @@ const VerVentaPage = () => {
                 <tbody>
                    
                 {detalleVentas.map(detalleVenta => {
-                 const precioNumerico = parseFloat(detalleVenta.PRODUCTO.PRECIO);
-                 const total = precioNumerico * detalleVenta.CANTIDAD;
+                    const total = (detalleVenta.PRECIO * detalleVenta.CANTIDAD).toString();
+                 
                     return (
                         <tr key={detalleVenta.ID}>
                             <td>{detalleVenta.PRODUCTO}</td>
+                            <td>{detalleVenta.PRECIO}</td>
                             <td>{detalleVenta.CANTIDAD}</td>
                             <td>{total}</td>
                             

@@ -10,11 +10,11 @@ import jakarta.persistence.Id;
 public class Venta {
 
 	private @Id @GeneratedValue Long id;
-	private String total;
+	private Double total;
 
 	private Venta() {}
 
-	public Venta(String total) {
+	public Venta(Double total) {
 		this.total = total;
 	}
 
@@ -44,21 +44,23 @@ public class Venta {
 			'}';
 	}
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getTotal() {
-		return total;
-	}
+    public Double getTotal() {
+        return total;
+    }
 
-	public void setTotal(String total) {
-		this.total = total;
-	}
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+	
 
 	
 }
