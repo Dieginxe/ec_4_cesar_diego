@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table
+@Table (name = "detalleventa")
 public class DetalleVenta {
     
     private @Id @GeneratedValue Long id;

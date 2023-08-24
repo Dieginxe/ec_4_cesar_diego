@@ -29,10 +29,10 @@ public class DatabaseLoader implements CommandLineRunner {
 		this.repositoryI.save(new Producto("Gloria","4.20"));
 		this.repositoryI.save(new Producto("Costeño","5.00"));
 
-		Producto cafetal = new Producto("Cafetal","8.50");
-		this.repositoryI.save(cafetal);
-		Producto manty = new Producto("Manty","5.00");
-		this.repositoryI.save(manty);
+		Producto cafe = new Producto("Cafetal","8.50");
+		this.repositoryI.save(cafe);
+		Producto mantequilla = new Producto("Manty","5.00");
+		this.repositoryI.save(mantequilla);
 		this.repositoryI.save(new Producto("Azucar","3.80"));
 
 
@@ -41,8 +41,8 @@ public class DatabaseLoader implements CommandLineRunner {
 		Venta total = new Venta("120");
 		this.repositoryB.save(total);
 
-		this.repositoryN.save(new DetalleVenta(total, cafetal, 15));
-		this.repositoryN.save(new DetalleVenta(total, manty, 16));
+		this.repositoryN.save(new DetalleVenta(total, mantequilla, 15));
+		
 		
 
 		

@@ -51,11 +51,14 @@ const VerVentaPage = () => {
                 <tbody>
                    
                 {detalleVentas.map(detalleVenta => {
-                 
+                 const precioNumerico = parseFloat(detalleVenta.PRODUCTO.PRECIO);
+                 const total = precioNumerico * detalleVenta.CANTIDAD;
                     return (
                         <tr key={detalleVenta.ID}>
-                            <td>{detalleVenta.producto}</td> {/* Cambiado de "manty" a "producto" */}
+                            <td>{detalleVenta.PRODUCTO}</td>
                             <td>{detalleVenta.CANTIDAD}</td>
+                            <td>{total}</td>
+                            
                             
                             
                         </tr>
