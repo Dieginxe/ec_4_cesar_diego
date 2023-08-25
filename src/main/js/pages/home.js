@@ -22,7 +22,7 @@ class HomePage extends React.Component {
 	render() {
 		return (
 			<>
-				<h1>Evaluacion Final</h1>
+				<h1>Cesar Diego De La Cruz</h1>
 
 				<div style={  {"width": "100%", "display": "flex"}   }>
 					<div style={{"width": "calc(100% / 3)"}}>
